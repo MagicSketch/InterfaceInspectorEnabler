@@ -15,3 +15,22 @@ var onSelectionChanged = function(context) {
   log("onSelectionChanged");
   context.actionContext.document.showMessage("onSelectionChanged");
 }
+
+var InterfaceInspectorFramework_FrameworkPath = InterfaceInspectorFramework_FrameworkPath || COScript.currentCOScript().env().scriptURL.path().stringByDeletingLastPathComponent();
+var InterfaceInspectorFramework_Log = InterfaceInspectorFramework_Log || log;
+(function() {
+var mocha = Mocha.sharedRuntime();
+var frameworkName = "InterfaceInspectorRemote";
+var directory = InterfaceInspectorFramework_FrameworkPath;
+if (mocha.valueForKey(frameworkName)) {
+InterfaceInspectorFramework_Log("😎 loadFramework: `" + frameworkName + "` already loaded.");
+return true;
+} else if ([mocha loadFrameworkWithName:frameworkName inDirectory:directory]) {
+InterfaceInspectorFramework_Log("✅ loadFramework: `" + frameworkName + "` success!");
+mocha.setValue_forKey_(true, frameworkName);
+return true;
+} else {
+InterfaceInspectorFramework_Log("❌ loadFramework: `" + frameworkName + "` failed!: " + directory + ". Please define InterfaceInspectorFramework_FrameworkPath if you're trying to @import in a custom plugin");
+return false;
+}
+})();

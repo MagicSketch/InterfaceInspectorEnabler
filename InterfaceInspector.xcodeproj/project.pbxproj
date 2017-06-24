@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A190B321EFEC32D0051438D /* manifest.json in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A190B311EFEC32D0051438D /* manifest.json */; };
 		1A190B341EFEC32D0051438D /* script.cocoscript in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A190B331EFEC32D0051438D /* script.cocoscript */; };
+		1A190B4F1EFEC3E30051438D /* InterfaceInspectorRemote.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1A190B4D1EFEC3570051438D /* InterfaceInspectorRemote.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -20,6 +21,7 @@
 			files = (
 				1A190B321EFEC32D0051438D /* manifest.json in CopyFiles */,
 				1A190B341EFEC32D0051438D /* script.cocoscript in CopyFiles */,
+				1A190B4F1EFEC3E30051438D /* InterfaceInspectorRemote.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -30,6 +32,7 @@
 		1A190B311EFEC32D0051438D /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = manifest.json; sourceTree = "<group>"; };
 		1A190B331EFEC32D0051438D /* script.cocoscript */ = {isa = PBXFileReference; lastKnownFileType = text; path = script.cocoscript; sourceTree = "<group>"; };
 		1A190B351EFEC32D0051438D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A190B4D1EFEC3570051438D /* InterfaceInspectorRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceInspectorRemote.framework; path = InterfaceInspectorFramework/InterfaceInspectorRemote.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 				1A190B311EFEC32D0051438D /* manifest.json */,
 				1A190B331EFEC32D0051438D /* script.cocoscript */,
 				1A190B351EFEC32D0051438D /* Info.plist */,
+				1A190B4D1EFEC3570051438D /* InterfaceInspectorRemote.framework */,
 			);
 			path = InterfaceInspector;
 			sourceTree = "<group>";
