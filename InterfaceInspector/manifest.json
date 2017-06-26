@@ -8,6 +8,7 @@
 	"compatibleVersion": 44,
 	"build": __BUILD__,
 	"version": "__VERSION__",
+    "appcast": "https://api.sketchpacks.com/v1/plugins/__IDENTIFIER__/appcast",
 
 	"commands": [
 		{
