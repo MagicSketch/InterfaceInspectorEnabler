@@ -84,6 +84,7 @@
 				1A190B2A1EFEC32D0051438D /* Frameworks */,
 				1A190B2B1EFEC32D0051438D /* CopyFiles */,
 				1A190B2C1EFEC32D0051438D /* ShellScript */,
+				1A00551E1F010D70009CE405 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,6 +128,19 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1A00551E1F010D70009CE405 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "f1=\"manifest.json\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"CONTENTS_FOLDER_PATH = $CONTENTS_FOLDER_PATH\"\necho \"__VERSION__ = $__VERSION__\"\necho \"__BUILD__ = $__BUILD__\"\necho \"__IDENTIFIER__ = $__IDENTIFIER__\"\nf2=\"$CONFIGURATION_BUILD_DIR/$CONTENTS_FOLDER_PATH/Sketch/$f1\"\nif [ -f $f2 ]; then\nsed -i \"\" -e \"s/__VERSION__/$__VERSION__/g\" \"$f2\"\nsed -i \"\" -e \"s/__BUILD__/$__BUILD__/g\" \"$f2\"\nsed -i \"\" -e \"s/__IDENTIFIER__/$__IDENTIFIER__/g\" \"$f2\"\n#atom \"$f2\"\nelse\necho \"File not found: $f2\"\nfi\n";
+		};
 		1A190B2C1EFEC32D0051438D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,10 +260,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = InterfaceInspector/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.InterfaceInspector;
+				PRODUCT_BUNDLE_IDENTIFIER = "----IDENTIFIER---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = sketchplugin;
+				__BUILD__ = 2;
+				__IDENTIFIER__ = io.magicsketch.InterfaceInspectorRemote;
+				__VERSION__ = 1.0;
 			};
 			name = Debug;
 		};
@@ -259,10 +276,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = InterfaceInspector/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				PRODUCT_BUNDLE_IDENTIFIER = io.magicsketch.InterfaceInspector;
+				PRODUCT_BUNDLE_IDENTIFIER = "----IDENTIFIER---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = sketchplugin;
+				__BUILD__ = 2;
+				__IDENTIFIER__ = io.magicsketch.InterfaceInspectorRemote;
+				__VERSION__ = 1.0;
 			};
 			name = Release;
 		};
@@ -285,6 +305,7 @@
 				1A190B3A1EFEC32D0051438D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

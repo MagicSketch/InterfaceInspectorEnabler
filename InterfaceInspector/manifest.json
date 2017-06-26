@@ -1,13 +1,13 @@
 {
-	"name": "InterfaceInspector",
-	"description" : "___DESCRIPTION___",
+	"name": "Interface Inspector Enabler",
+	"description" : "Install Interface Inspector Remote framework so that Sketch can be inspected in SIP enabled system.",
 	"author": "James Tang",
-	"authorEmail" : "___EMAIL___",
-	"homepage": "___HOMEPAGE___",
-	"identifier" : "io.magicsketch.InterfaceInspector",
-	"compatibleVersion": "___SKETCHVERSION___",
-	"build": 1,
-	"version": "1.0.0",
+	"authorEmail" : "james@magicsketch.io",
+	"homepage": "http://github.com/MagicSketch/InterfaceInspectorEnabler",
+	"identifier" : "__IDENTIFIER__",
+	"compatibleVersion": 44,
+	"build": __BUILD__,
+	"version": "__VERSION__",
 
 	"commands": [
 		{
