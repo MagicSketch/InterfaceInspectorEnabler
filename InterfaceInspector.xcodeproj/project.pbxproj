@@ -265,7 +265,7 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = sketchplugin;
 				__BUILD__ = 2;
-				__IDENTIFIER__ = io.magicsketch.InterfaceInspectorRemote;
+				__IDENTIFIER__ = io.magicsketch.InterfaceInspectorEnabler;
 				__VERSION__ = 1.0;
 			};
 			name = Debug;
@@ -281,7 +281,7 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = sketchplugin;
 				__BUILD__ = 2;
-				__IDENTIFIER__ = io.magicsketch.InterfaceInspectorRemote;
+				__IDENTIFIER__ = io.magicsketch.InterfaceInspectorEnabler;
 				__VERSION__ = 1.0;
 			};
 			name = Release;
