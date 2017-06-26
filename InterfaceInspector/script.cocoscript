@@ -1,36 +1,44 @@
+
+function runCommand(command, args) {
+    var task = NSTask.alloc().init();
+    task.launchPath = command;
+    task.arguments = args;
+    task.launch();
+    task.waitUntilExit();
+    return (task.terminationStatus() == 0)
+}
+
 var onRun = function(context) {
-  log("onRun");
-  context.document.showMessage("onRun");
-}
 
-var onStartup = function(context) {
-  log("onStartup");
-}
+    var InterfaceInspectorFramework_FrameworkPath = InterfaceInspectorFramework_FrameworkPath || COScript.currentCOScript().env().scriptURL.path().stringByDeletingLastPathComponent();
 
-var onOpenDocument = function(context) {
-  log("onOpenDocument");
-}
+    var InterfaceInspectorFramework_Log = function(message) {
+        context.document.showMessage(message);
+        log(message);
+    };
 
-var onSelectionChanged = function(context) {
-  log("onSelectionChanged");
-  context.actionContext.document.showMessage("onSelectionChanged");
-}
+    (function() {
+    var mocha = Mocha.sharedRuntime();
+    var frameworkName = "InterfaceInspectorRemote";
+    var directory = InterfaceInspectorFramework_FrameworkPath;
+    if (mocha.valueForKey(frameworkName)) {
+    InterfaceInspectorFramework_Log("😎 loadFramework: `" + frameworkName + "` already loaded.");
+    return true;
+    } else if ([mocha loadFrameworkWithName:frameworkName inDirectory:directory]) {
+    InterfaceInspectorFramework_Log("✅ loadFramework: `" + frameworkName + "` success!");
+    mocha.setValue_forKey_(true, frameworkName);
+    return true;
+    } else {
+    InterfaceInspectorFramework_Log("❌ loadFramework: `" + frameworkName + "` failed!: " + directory + ". Please define InterfaceInspectorFramework_FrameworkPath if you're trying to @import in a custom plugin");
+    return false;
+    }
+    })();
 
-var InterfaceInspectorFramework_FrameworkPath = InterfaceInspectorFramework_FrameworkPath || COScript.currentCOScript().env().scriptURL.path().stringByDeletingLastPathComponent();
-var InterfaceInspectorFramework_Log = InterfaceInspectorFramework_Log || log;
-(function() {
-var mocha = Mocha.sharedRuntime();
-var frameworkName = "InterfaceInspectorRemote";
-var directory = InterfaceInspectorFramework_FrameworkPath;
-if (mocha.valueForKey(frameworkName)) {
-InterfaceInspectorFramework_Log("😎 loadFramework: `" + frameworkName + "` already loaded.");
-return true;
-} else if ([mocha loadFrameworkWithName:frameworkName inDirectory:directory]) {
-InterfaceInspectorFramework_Log("✅ loadFramework: `" + frameworkName + "` success!");
-mocha.setValue_forKey_(true, frameworkName);
-return true;
-} else {
-InterfaceInspectorFramework_Log("❌ loadFramework: `" + frameworkName + "` failed!: " + directory + ". Please define InterfaceInspectorFramework_FrameworkPath if you're trying to @import in a custom plugin");
-return false;
+    var args = [
+    "-l",
+    "-c",
+    "open -a Interface\\ Inspector"
+    ]
+    return runCommand("/bin/bash", args)
+
 }
-})();
