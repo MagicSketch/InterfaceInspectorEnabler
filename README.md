@@ -1,6 +1,8 @@
 Interface Inspector Enabler for Sketch
 ---
 
+![](cover.png)
+
 Apple introduced __System Integrity Protection (SIP)__ since OSX El Capitan.
 
 This affects [Interface Inspector](https://www.interface-inspector.com) to inspect Sketch on System that has SIP enabled which is on by default.
