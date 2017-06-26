@@ -13,7 +13,7 @@
 		{
 			"name" : "Run Interface Inspector",
 			"identifier" : "run",
-			"shortcut" : "",
+			"shortcut" : "cmd shift control i",
 			"script" : "script.cocoscript",
 			"handler" : "onRun"
 		}
